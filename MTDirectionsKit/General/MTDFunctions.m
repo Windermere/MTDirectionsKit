@@ -161,11 +161,12 @@ UIImage *MTDColoredImage(CGSize size, UIColor *color) {
     UIGraphicsBeginImageContext(size);
     {
         CGContextRef context = UIGraphicsGetCurrentContext();
+        if (context) {
+            CGContextSetFillColorWithColor(context, color.CGColor);
+            CGContextFillRect(context, rect);
 
-        CGContextSetFillColorWithColor(context, color.CGColor);
-        CGContextFillRect(context, rect);
-        
-        image = UIGraphicsGetImageFromCurrentImageContext();
+            image = UIGraphicsGetImageFromCurrentImageContext();
+        }
     }
     UIGraphicsEndImageContext();
     

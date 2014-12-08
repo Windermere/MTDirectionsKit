@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MTDirectionsKit"
-  s.version      = "1.7.0"
+  s.version      = "1.7.1"
   s.summary      = "Show directions directly on top of MKMapView"
 
   s.description  = <<-DESC
